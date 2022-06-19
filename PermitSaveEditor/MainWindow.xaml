@@ -1,0 +1,60 @@
+﻿<Window x:Class="PermitSaveEditor.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PermitSaveEditor"
+        mc:Ignorable="d"
+        Title="Potion Permit Save Editor" Height="322" Width="733">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="13*"/>
+            <ColumnDefinition Width="0*"/>
+            <ColumnDefinition Width="147*"/>
+        </Grid.ColumnDefinitions>
+        <Button Content="Load File" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="56" Name="LoadFileBtn" Click="LoadFileBtn_Click" Grid.ColumnSpan="3"/>
+        <TextBlock HorizontalAlignment="Left" Margin="11,10,0,0" TextWrapping="Wrap" Text="File Name" VerticalAlignment="Top" Height="20" Width="200" Name="LoadedFileText" Grid.Column="2"/>
+        <TextBlock HorizontalAlignment="Left" Margin="224,53,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="36" Grid.Column="2"><Run Text="Gold"/><Run Language="en-gb" Text=":"/></TextBlock>
+        <TextBox x:Name="Gold" HorizontalAlignment="Left" Margin="265,53,0,0" TextWrapping="Wrap" Text="500" VerticalAlignment="Top" Width="120" Grid.Column="2"/>
+        <TextBlock HorizontalAlignment="Left" Margin="224,76,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="36" Grid.Column="2"><Run Language="en-gb" Text="Wood:"/></TextBlock>
+        <TextBox x:Name="Wood" HorizontalAlignment="Left" Margin="265,76,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="120" Grid.Column="2"/>
+        <TextBlock HorizontalAlignment="Left" Margin="224,99,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="36" Grid.Column="2"><Run Language="en-gb" Text="Stone:"/></TextBlock>
+        <TextBox x:Name="Stone" HorizontalAlignment="Left" Margin="265,99,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="120" Grid.Column="2"/>
+        <TextBlock HorizontalAlignment="Left" Margin="10,61,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="79" Height="14" Grid.ColumnSpan="3"><Run Language="en-gb" Text="Player Name:"/><LineBreak/><Run Language="en-gb"/></TextBlock>
+        <TextBox x:Name="PlayerName" HorizontalAlignment="Left" Margin="24,61,0,0" TextWrapping="Wrap" Text="Logan&#xD;&#xA;" VerticalAlignment="Top" Width="120" RenderTransformOrigin="-0.065,0.737" Height="18" Grid.Column="2"/>
+        <TextBlock HorizontalAlignment="Left" Margin="10,83,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="79" Height="16" Grid.ColumnSpan="3"><Run Language="en-gb" Text="Dog Name:"/><LineBreak/><Run Language="en-gb"/></TextBlock>
+        <TextBox x:Name="DogName" HorizontalAlignment="Left" Margin="24,84,0,0" TextWrapping="Wrap" Text="Noxe" VerticalAlignment="Top" Width="120" Grid.Column="2"/>
+        <TextBlock HorizontalAlignment="Left" Margin="16,159,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Grid.ColumnSpan="3"><Run Language="en-gb" Text="Skin Colour:"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="16,181,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="18" Grid.ColumnSpan="3"><Run Language="en-gb" Text="Hair Colour:"/><LineBreak/><Run Language="en-gb"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="16,204,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Grid.ColumnSpan="3"><Run Language="en-gb" Text="Eyes"/><Run Text=" Colour:"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="16,225,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Grid.ColumnSpan="3"><Run Language="en-gb" Text="Outfit"/><Run Text=" Colour:"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="16,246,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Grid.ColumnSpan="3"><Run Language="en-gb" Text="Cape"/><Run Text=" Colour:"/></TextBlock>
+        <TextBox x:Name="SkinR" HorizontalAlignment="Left" Margin="30,158,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="140" Grid.Column="2"/>
+        <TextBox x:Name="SkinG" HorizontalAlignment="Left" Margin="184,158,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="140" Grid.Column="2"/>
+        <TextBox x:Name="SkinB" HorizontalAlignment="Left" Margin="338,158,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="140" Grid.Column="2"/>
+        <TextBox x:Name="SkinA" HorizontalAlignment="Left" Margin="494,158,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="135" Grid.Column="2"/>
+        <TextBox x:Name="HairR" HorizontalAlignment="Left" Margin="30,181,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="140" Grid.Column="2"/>
+        <TextBox x:Name="HairG" HorizontalAlignment="Left" Margin="184,181,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="140" Grid.Column="2"/>
+        <TextBox x:Name="HairB" HorizontalAlignment="Left" Margin="338,181,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="140" Grid.Column="2"/>
+        <TextBox x:Name="HairA" HorizontalAlignment="Left" Margin="494,181,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="135" Grid.Column="2"/>
+        <TextBox x:Name="EyesR" HorizontalAlignment="Left" Margin="30,204,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="140" Grid.Column="2"/>
+        <TextBox x:Name="EyesG" HorizontalAlignment="Left" Margin="184,204,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="140" Grid.Column="2"/>
+        <TextBox x:Name="EyesB" HorizontalAlignment="Left" Margin="338,204,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="140" Grid.Column="2"/>
+        <TextBox x:Name="EyesA" HorizontalAlignment="Left" Margin="494,204,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="135" Grid.Column="2"/>
+        <TextBox x:Name="ClothR" HorizontalAlignment="Left" Margin="30,227,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="140" Grid.Column="2"/>
+        <TextBox x:Name="ClothG" HorizontalAlignment="Left" Margin="184,227,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="140" Grid.Column="2"/>
+        <TextBox x:Name="ClothB" HorizontalAlignment="Left" Margin="338,227,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="140" Grid.Column="2"/>
+        <TextBox x:Name="ClothA" HorizontalAlignment="Left" Margin="494,227,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="135" Grid.Column="2"/>
+        <TextBox x:Name="CapeR" HorizontalAlignment="Left" Margin="30,250,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="140" Grid.Column="2"/>
+        <TextBox x:Name="CapeG" HorizontalAlignment="Left" Margin="184,250,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="140" Grid.Column="2"/>
+        <TextBox x:Name="CapeB" HorizontalAlignment="Left" Margin="338,250,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="140" Grid.Column="2"/>
+        <TextBox x:Name="CapeA" HorizontalAlignment="Left" Margin="494,250,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="135" Grid.Column="2"/>
+        <TextBlock HorizontalAlignment="Left" Margin="30,138,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="2"><Run Language="en-gb" Text="R"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="184,135,0,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.656,0.901" Grid.Column="2"><Run Language="en-gb" Text="G"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="338,135,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="2"><Run Language="en-gb" Text="B"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="494,135,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="2"><Run Language="en-gb" Text="A"/></TextBlock>
+        <Button Content="Save" HorizontalAlignment="Left" Margin="591,53,0,0" VerticalAlignment="Top" Name="SaveBtn" Click="SaveBtn_Click" Height="25" Width="38" Grid.Column="2"/>
+        <Button Content="Download Plain Json File" HorizontalAlignment="Left" Margin="441,53,0,0" VerticalAlignment="Top" x:Name="DPJFile_Btn" Click="DPJFile_Btn_Click" Height="25" Width="145" Grid.Column="2"/>
+
+    </Grid>
+</Window>
