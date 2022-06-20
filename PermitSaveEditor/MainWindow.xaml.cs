@@ -39,19 +39,27 @@ namespace PermitSaveEditor
             LoadedFileText.Text = _fileName;
             if (!string.IsNullOrEmpty(dialog.FileName))
             {
-                var fs = dialog.OpenFile();
-                var buffer = new byte[fs.Length];
-                await fs.ReadAsync(buffer.AsMemory());
-                fs.Close();
+                try
+                {
+                    var fs = dialog.OpenFile();
+                    var buffer = new byte[fs.Length];
+                    await fs.ReadAsync(buffer.AsMemory());
+                    fs.Close();
 
-                var fileData = Encoding.UTF8.GetString(buffer);
-                var fileJsonData = DataManager.ExecuteCypher(fileData);
+                    var fileData = Encoding.UTF8.GetString(buffer);
+                    var fileJsonData = DataManager.ExecuteCypher(fileData);
 
-                var jsonData = JsonConvert.DeserializeObject<GameSaveData>(fileJsonData);
-                SetInputValues(jsonData!);
+                    var jsonData = JsonConvert.DeserializeObject<GameSaveData>(fileJsonData);
+                    SetInputValues(jsonData!);
 
-                SaveBtn.Visibility = Visibility.Visible;
-                DPJFile_Btn.Visibility = Visibility.Visible;
+                    SaveBtn.Visibility = Visibility.Visible;
+                    DPJFile_Btn.Visibility = Visibility.Visible;
+                }
+                catch(Exception ex)
+                {
+                    LoadedFileText.Text = "File Name";
+                    MessageBox.Show("Failed to load save file, data may be corrupted.", "Error", MessageBoxButton.OK);
+                }
             }
         }
 
