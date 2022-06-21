@@ -1,4 +1,7 @@
-﻿namespace PermitSaveEditor.Data
+﻿using System.Collections.Generic;
+using System.Linq;
+
+namespace PermitSaveEditor.Data
 {
     public class DataManager
     {
@@ -16,5 +19,16 @@
 
             return new(charArray);
         }
+
+        public static IEnumerable<bool> UnlockAll(List<bool> dataList)
+        {
+            dataList.ForEach(x =>
+            {
+                if (!x) x = !x;
+            });
+            return dataList;
+        }
+
+        public static bool AllEnabled(List<bool> dataList) => dataList.All(x => x);
     }
 }

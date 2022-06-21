@@ -5,6 +5,13 @@ namespace PermitSaveEditor.Objects
 {
     public class GameSaveData
     {
+        public GameSaveData()
+        {
+            CharacterName = "Logan";
+            DogName = "Noxe";
+            Gold = 500;
+        }
+
         [JsonProperty("isEmptyData")]
         public bool IsEmptyData { get; set; }
 
