@@ -82,21 +82,10 @@ namespace PermitSaveEditor
             DPJFile_Btn.Visibility = Visibility.Visible;
             UnlockablesTab.Visibility = Visibility.Visible;
 
-            if (DataManager.AllEnabled(_loadedSave!.SkinLockStateList))
-                SkinUnlock.IsEnabled = false;
-            else SkinUnlock.IsEnabled = true;
-
-            if (DataManager.AllEnabled(_loadedSave!.HairLockStateList))
-                HairUnlock.IsEnabled = false;
-            else HairUnlock.IsEnabled = true;
-
-            if (DataManager.AllEnabled(_loadedSave!.ClothLockStateList))
-                ClothUnlock.IsEnabled = false;
-            else ClothUnlock.IsEnabled = true;
-
-            if (DataManager.AllEnabled(_loadedSave!.CapeLockStateList))
-                CapeUnlock.IsEnabled = false;
-            else CapeUnlock.IsEnabled = true;
+            SkinUnlock.IsEnabled = !DataManager.AllEnabled(_loadedSave!.SkinLockStateList);
+            SkinUnlock.IsEnabled = !DataManager.AllEnabled(_loadedSave!.HairLockStateList);
+            SkinUnlock.IsEnabled = !DataManager.AllEnabled(_loadedSave!.ClothLockStateList);
+            SkinUnlock.IsEnabled = !DataManager.AllEnabled(_loadedSave!.CapeLockStateList);
         }
     }
 }
