@@ -45,16 +45,9 @@ namespace PermitSaveEditor
             CarpenterLevel.Text = saveData.CarpenterLevel.ToString();
             BlacksmithLevel.Text = saveData.BlacksmithLevel.ToString();
 
-            if (saveData.Gender == 0)
-            {
-                MaleGenderRadio.IsChecked = false;
-                FemaleGenderRadio.IsChecked = true;
-            }
-            else
-            {
-                MaleGenderRadio.IsChecked = true;
-                FemaleGenderRadio.IsChecked = false;
-            }
+            var isFemale = saveData.Gender == 0;
+            MaleGenderRadio.IsChecked = !isFemale;
+            FemaleGenderRadio.IsChecked = isFemale;
         }
 
         public string GetSaveDataAsJson()
