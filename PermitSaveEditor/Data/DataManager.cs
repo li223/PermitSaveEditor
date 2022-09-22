@@ -20,15 +20,6 @@ namespace PermitSaveEditor.Data
             return new(charArray);
         }
 
-        public static IEnumerable<bool> UnlockAll(List<bool> dataList)
-        {
-            dataList.ForEach(x =>
-            {
-                if (!x) x = !x;
-            });
-            return dataList;
-        }
-
-        public static bool AllEnabled(List<bool> dataList) => dataList.All(x => x);
+        public static bool AllEnabled(IEnumerable<bool> dataList) => dataList.All(x => x);
     }
 }

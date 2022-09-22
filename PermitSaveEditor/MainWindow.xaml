@@ -3,17 +3,18 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:PermitSaveEditor"
+        xmlns:local="clr-namespace:PermitSaveEditor" 
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
         mc:Ignorable="d"
         Title="Potion Permit Save Editor" Height="374" Width="733">
-    <Grid>
+    <Grid Margin="0,0,0,-6">
         <Button Content="Load File" HorizontalAlignment="Left" Margin="10,9,0,0" VerticalAlignment="Top" Width="56" Name="LoadFileBtn" Click="LoadFileBtn_Click"/>
         <TextBlock HorizontalAlignment="Left" Margin="71,9,0,0" TextWrapping="Wrap" Text="File Name" VerticalAlignment="Top" Height="20" Width="200" Name="LoadedFileText"/>
         <Button Content="Save" HorizontalAlignment="Left" Margin="653,10,0,0" VerticalAlignment="Top" Name="SaveBtn" Click="SaveBtn_Click" Height="24" Width="38"/>
         <Button Content="Download Plain Json File" HorizontalAlignment="Left" Margin="503,10,0,0" VerticalAlignment="Top" x:Name="DPJFile_Btn" Click="DPJFile_Btn_Click" Height="24" Width="145"/>
-        <TabControl Margin="0,35,0,0">
-            <TabItem Header="General" Margin="8,-4,-12,2" BorderBrush="#FFACACAC">
-                <Grid Background="#FFE5E5E5" Height="296">
+        <TabControl Margin="0,34,0,-2">
+            <TabItem Header="General" Margin="8,-4,-12,2" BorderBrush="#FFACACAC" BorderThickness="0,1,0,0">
+                <Grid Background="#FFE5E5E5" Height="301">
                     <Grid.RowDefinitions>
                         <RowDefinition/>
                         <RowDefinition Height="200"/>
@@ -28,50 +29,35 @@
                     <TextBox x:Name="PlayerName" HorizontalAlignment="Left" Margin="88,14,0,0" TextWrapping="Wrap" Text="Logan&#xA;" VerticalAlignment="Top" Width="120" RenderTransformOrigin="-0.065,0.737" Height="18"/>
                     <TextBlock HorizontalAlignment="Left" Margin="14,36,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="79" Height="16"><Run Language="en-gb" Text="Dog Name:"/><LineBreak/><Run Language="en-gb"/></TextBlock>
                     <TextBox x:Name="DogName" HorizontalAlignment="Left" Margin="88,37,0,0" TextWrapping="Wrap" Text="Noxe" VerticalAlignment="Top" Width="120" Height="18"/>
-                    <TextBlock HorizontalAlignment="Left" Margin="16,44,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Row="1" Height="16" Width="73"><Run Language="en-gb" Text="Skin Colour:"/></TextBlock>
-                    <TextBlock HorizontalAlignment="Left" Margin="16,65,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="18" Grid.Row="1" Width="73"><Run Language="en-gb" Text="Hair Colour:"/><LineBreak/><Run Language="en-gb"/></TextBlock>
-                    <TextBlock HorizontalAlignment="Left" Margin="16,89,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Row="1" Height="16" Width="73"><Run Language="en-gb" Text="Eyes"/><Run Text=" Colour:"/></TextBlock>
-                    <TextBlock HorizontalAlignment="Left" Margin="16,113,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Row="1" RenderTransformOrigin="0.497,0.798" Height="16" Width="75"><Run Language="en-gb" Text="Outfit"/><Run Text=" Colour:"/></TextBlock>
-                    <TextBlock HorizontalAlignment="Left" Margin="16,135,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Row="1" Height="16" Width="73"><Run Language="en-gb" Text="Cape"/><Run Text=" Colour:"/></TextBlock>
-                    <TextBox x:Name="SkinR" HorizontalAlignment="Left" Margin="94,42,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="140" Grid.Row="1" Height="18"/>
-                    <TextBox x:Name="SkinG" HorizontalAlignment="Left" Margin="248,42,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="140" Grid.Row="1" Height="18"/>
-                    <TextBox x:Name="SkinB" HorizontalAlignment="Left" Margin="402,42,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="140" Grid.Row="1" Height="18"/>
-                    <TextBox x:Name="SkinA" HorizontalAlignment="Left" Margin="558,42,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="135" Grid.Row="1" Height="18"/>
-                    <TextBox x:Name="HairR" HorizontalAlignment="Left" Margin="94,65,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="140" Grid.Row="1" Height="18"/>
-                    <TextBox x:Name="HairG" HorizontalAlignment="Left" Margin="248,65,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="140" Grid.Row="1" Height="18"/>
-                    <TextBox x:Name="HairB" HorizontalAlignment="Left" Margin="402,65,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="140" Grid.Row="1" Height="18"/>
-                    <TextBox x:Name="HairA" HorizontalAlignment="Left" Margin="558,65,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="135" Grid.Row="1" Height="18"/>
-                    <TextBox x:Name="EyesR" HorizontalAlignment="Left" Margin="94,89,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="140" Grid.Row="1" Height="18"/>
-                    <TextBox x:Name="EyesG" HorizontalAlignment="Left" Margin="248,89,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="140" Grid.Row="1" Height="18"/>
-                    <TextBox x:Name="EyesB" HorizontalAlignment="Left" Margin="402,89,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="140" Grid.Row="1" Height="18"/>
-                    <TextBox x:Name="EyesA" HorizontalAlignment="Left" Margin="558,89,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="135" Grid.Row="1" Height="18"/>
-                    <TextBox x:Name="ClothR" HorizontalAlignment="Left" Margin="94,111,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="140" Grid.Row="1" Height="18"/>
-                    <TextBox x:Name="ClothG" HorizontalAlignment="Left" Margin="248,111,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="140" Grid.Row="1" Height="18"/>
-                    <TextBox x:Name="ClothB" HorizontalAlignment="Left" Margin="402,111,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="140" Grid.Row="1" Height="18"/>
-                    <TextBox x:Name="ClothA" HorizontalAlignment="Left" Margin="558,111,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="135" Grid.Row="1" Height="18"/>
-                    <TextBox x:Name="CapeR" HorizontalAlignment="Left" Margin="94,134,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="140" Grid.Row="1" Height="18"/>
-                    <TextBox x:Name="CapeG" HorizontalAlignment="Left" Margin="248,134,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="140" Grid.Row="1" Height="18"/>
-                    <TextBox x:Name="CapeB" HorizontalAlignment="Left" Margin="402,134,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="140" Grid.Row="1" Height="18"/>
-                    <TextBox x:Name="CapeA" HorizontalAlignment="Left" Margin="558,134,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="135" Grid.Row="1" Height="18"/>
-                    <TextBlock HorizontalAlignment="Left" Margin="94,22,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Row="1" Height="16" Width="7"><Run Language="en-gb" Text="R"/></TextBlock>
-                    <TextBlock HorizontalAlignment="Left" Margin="248,19,0,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.656,0.901" Grid.Row="1" Height="16" Width="8"><Run Language="en-gb" Text="G"/></TextBlock>
-                    <TextBlock HorizontalAlignment="Left" Margin="402,19,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Row="1" Height="16" Width="7"><Run Language="en-gb" Text="B"/></TextBlock>
-                    <TextBlock HorizontalAlignment="Left" Margin="558,19,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Row="1" Height="16" Width="8"><Run Language="en-gb" Text="A"/></TextBlock>
+                    <TextBlock HorizontalAlignment="Left" Margin="16,15,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Row="1" Height="16" Width="73"><Run Language="en-gb" Text="Skin Colour:"/></TextBlock>
+                    <TextBlock HorizontalAlignment="Left" Margin="16,51,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="18" Grid.Row="1" Width="73"><Run Language="en-gb" Text="Hair Colour:"/><LineBreak/><Run Language="en-gb"/></TextBlock>
+                    <TextBlock HorizontalAlignment="Left" Margin="16,0,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Grid.Row="1" Height="16" Width="73"><Run Language="en-gb" Text="Eyes"/><Run Text=" Colour:"/></TextBlock>
+                    <TextBlock HorizontalAlignment="Left" Margin="18,129,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Row="1" RenderTransformOrigin="0.497,0.798" Height="16" Width="75"><Run Language="en-gb" Text="Outfit"/><Run Text=" Colour:"/></TextBlock>
+                    <TextBlock HorizontalAlignment="Left" Margin="16,163,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Row="1" Height="16" Width="73"><Run Language="en-gb" Text="Cape"/><Run Text=" Colour:"/></TextBlock>
+                    <xctk:ColorPicker DisplayColorAndName="False" x:Name="SkinColour" Margin="96,15,32,168" Grid.Row="1" />
                     <RadioButton IsChecked="True" x:Name="MaleGenderRadio" Content="Male" HorizontalAlignment="Left" Margin="163,66,0,0" VerticalAlignment="Top" Height="15" Width="45"/>
                     <RadioButton x:Name="FemaleGenderRadio" Content="Female" HorizontalAlignment="Left" Margin="88,66,0,0" VerticalAlignment="Top" Height="15" Width="57"/>
                     <Label Content="Gender" HorizontalAlignment="Left" Margin="14,60,0,0" VerticalAlignment="Top" Height="26" Width="49"/>
-                    <TextBlock HorizontalAlignment="Left" Margin="484,6,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="96" Height="16"><Run Text="Carpenter Level"/><Run Language="en-gb" Text=":"/></TextBlock>
+                    <TextBlock HorizontalAlignment="Left" Margin="484,8,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="96" Height="16"><Run Text="Carpenter Level"/><Run Language="en-gb" Text=":"/></TextBlock>
                     <TextBox x:Name="CarpenterLevel" HorizontalAlignment="Left" Margin="585,6,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="41" Height="18"/>
-                    <TextBlock HorizontalAlignment="Left" Margin="484,30,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="96" Height="16"><Run Text="Blacksmith Level"/><Run Language="en-gb" Text=":"/></TextBlock>
+                    <TextBlock HorizontalAlignment="Left" Margin="484,0,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="96" Height="16"><Run Text="Blacksmith Level"/><Run Language="en-gb" Text=":"/></TextBlock>
                     <TextBox x:Name="BlacksmithLevel" HorizontalAlignment="Left" Margin="585,0,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Center" Width="41" Height="18"/>
+                    <xctk:ColorPicker DisplayColorAndName="False" x:Name="HairColour" Margin="96,52,32,131" Grid.Row="1" />
+                    <xctk:ColorPicker DisplayColorAndName="False" x:Name="EyeColour" Margin="96,92,32,92" Grid.Row="1" />
+                    <xctk:ColorPicker DisplayColorAndName="False" x:Name="OutfitColour" Margin="96,127,32,55" Grid.Row="1" />
+                    <xctk:ColorPicker DisplayColorAndName="False" x:Name="CapeColour" Margin="96,163,32,20" Grid.Row="1" />
                 </Grid>
             </TabItem>
             <TabItem x:Name="UnlockablesTab" Header="Unlockables" Margin="10,-2,-10,2">
                 <Grid Background="#FFE5E5E5">
-                    <Button x:Name="SkinUnlock" Content="Unlock All Skins" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="92" Click="SkinUnlock_Click"/>
-                    <Button x:Name="HairUnlock" Content="Unlock All Hair" HorizontalAlignment="Left" Margin="107,10,0,0" VerticalAlignment="Top" Width="92" Click="HairUnlock_Click"/>
-                    <Button x:Name="ClothUnlock" Content="Unlock All Cloth" HorizontalAlignment="Left" Margin="204,10,0,0" VerticalAlignment="Top" Width="92" Click="ClothUnlock_Click"/>
-                    <Button x:Name="CapeUnlock" Content="Unlock All Capes" HorizontalAlignment="Left" Margin="301,10,0,0" VerticalAlignment="Top" Width="96" Click="CapeUnlock_Click"/>
+                    <Button x:Name="SkinUnlock" Content="Unlock All Skins" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="110" Click="SkinUnlock_Click"/>
+                    <Button x:Name="HairUnlock" Content="Unlock All Hair" HorizontalAlignment="Left" Margin="126,10,0,0" VerticalAlignment="Top" Width="92" Click="HairUnlock_Click"/>
+                    <Button x:Name="ClothUnlock" Content="Unlock All Cloth" HorizontalAlignment="Left" Margin="223,10,0,0" VerticalAlignment="Top" Width="92" Click="ClothUnlock_Click"/>
+                    <Button x:Name="CapeUnlock" Content="Unlock All Capes" HorizontalAlignment="Left" Margin="320,10,0,0" VerticalAlignment="Top" Width="96" Click="CapeUnlock_Click"/>
+                    <Button x:Name="FastTravelUnlock" Content="Unlock All Fast Travel Points" HorizontalAlignment="Left" Margin="421,10,0,0" VerticalAlignment="Top" Width="153" Click="FastTravelUnlock_Click"/>
+                    <Button x:Name="RecipesUnlock" Content="Unlock All Recipes" HorizontalAlignment="Left" Margin="579,10,0,0" VerticalAlignment="Top" Width="110" Click="RecipesUnlock_Click"/>
+                    <Button x:Name="PotionsUnlock" Content="Unlock All Potions" HorizontalAlignment="Left" Margin="10,35,0,0" VerticalAlignment="Top" Width="110" Click="PotionsUnlock_Click"/>
+                    <Button x:Name="HealAll" Content="Heal All" HorizontalAlignment="Left" Margin="126,35,0,0" VerticalAlignment="Top" Width="92" Click="HealAll_Click"/>
                 </Grid>
             </TabItem>
         </TabControl>

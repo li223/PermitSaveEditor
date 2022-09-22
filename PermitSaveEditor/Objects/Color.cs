@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using System;
 
 namespace PermitSaveEditor.Objects
 {
@@ -33,5 +34,7 @@ namespace PermitSaveEditor.Objects
 
         [JsonProperty("a")]
         public double A { get; set; }
+
+        public (byte A, byte R, byte G, byte B) ToArgb() => ((byte)(A * 255.0), (byte)(R * 255.0), (byte)(G * 255.0), (byte)(B * 255.0));
     }
 }

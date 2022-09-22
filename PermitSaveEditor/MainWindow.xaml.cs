@@ -18,6 +18,7 @@ namespace PermitSaveEditor
         public MainWindow()
         {
             InitializeComponent();
+            Height = 400;
             SaveBtn.Visibility = Visibility.Hidden;
             DPJFile_Btn.Visibility = Visibility.Hidden;
             UnlockablesTab.Visibility = Visibility.Hidden;
@@ -34,12 +35,12 @@ namespace PermitSaveEditor
 
             dialog.ShowDialog();
             _fileName = dialog.FileName.Split("\\").Last();
-            LoadedFileText.Text = _fileName;
 
             if (!string.IsNullOrEmpty(dialog.FileName))
             {
                 try
                 {
+                    LoadedFileText.Text = _fileName;
                     var fs = dialog.OpenFile();
                     var buffer = new byte[fs.Length];
                     await fs.ReadAsync(buffer.AsMemory());
@@ -107,28 +108,56 @@ namespace PermitSaveEditor
                 File.WriteAllText(saveDialog.FileName, jsonData);
         }
 
+        #region Unlocks
+
         private void SkinUnlock_Click(object sender, RoutedEventArgs e)
         {
-            DataManager.UnlockAll(_loadedSave!.SkinLockStateList);
+            _loadedSave!.SkinLockStateList.UnlockAll();
             HandleInputVisibility();
         }
 
         private void HairUnlock_Click(object sender, RoutedEventArgs e)
         {
-            DataManager.UnlockAll(_loadedSave!.HairLockStateList);
+            _loadedSave!.HairLockStateList.UnlockAll();
             HandleInputVisibility();
         }
 
         private void ClothUnlock_Click(object sender, RoutedEventArgs e)
         {
-            DataManager.UnlockAll(_loadedSave!.ClothLockStateList);
+            _loadedSave!.ClothLockStateList.UnlockAll();
             HandleInputVisibility();
         }
 
         private void CapeUnlock_Click(object sender, RoutedEventArgs e)
         {
-            DataManager.UnlockAll(_loadedSave!.CapeLockStateList);
+            _loadedSave!.CapeLockStateList.UnlockAll();
             HandleInputVisibility();
         }
+
+        private void FastTravelUnlock_Click(object sender, RoutedEventArgs e)
+        {
+            _loadedSave!.FastTravelState.Values.UnlockAll();
+            HandleInputVisibility();
+        }
+
+        private void RecipesUnlock_Click(object sender, RoutedEventArgs e)
+        {
+            _loadedSave!.RecipeLockState.Values.UnlockAll();
+            HandleInputVisibility();
+        }
+
+        private void PotionsUnlock_Click(object sender, RoutedEventArgs e)
+        {
+            _loadedSave!.PotionLockState.Values.UnlockAll();
+            HandleInputVisibility();
+        }
+
+        private void HealAll_Click(object sender, RoutedEventArgs e)
+        {
+            _loadedSave!.NpcHealthDataList.HealAll();
+            HandleInputVisibility();
+        }
+
+        #endregion
     }
 }
