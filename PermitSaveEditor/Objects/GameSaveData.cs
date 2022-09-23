@@ -103,7 +103,7 @@ namespace PermitSaveEditor.Objects
         public List<object> KeyItemActiveList { get; set; }
 
         [JsonProperty("researchList")]
-        public List<string> ResearchList { get; set; }
+        public string[] ResearchList { get; set; }
 
         [JsonProperty("recipeLockState")]
         public RecipeLockState RecipeLockState { get; set; }
@@ -112,10 +112,10 @@ namespace PermitSaveEditor.Objects
         public TutorialFlag TutorialFlag { get; set; }
 
         [JsonProperty("newMaterialList")]
-        public List<string> NewMaterialList { get; set; }
+        public string[] NewMaterialList { get; set; }
 
         [JsonProperty("newFoodIDList")]
-        public List<string> NewFoodIDList { get; set; }
+        public string[] NewFoodIDList { get; set; }
 
         [JsonProperty("newPotionIDList")]
         public List<object> NewPotionIDList { get; set; }
@@ -124,19 +124,19 @@ namespace PermitSaveEditor.Objects
         public List<object> NewFishIDList { get; set; }
 
         [JsonProperty("newNpcIDList")]
-        public List<string> NewNpcIDList { get; set; }
+        public string[] NewNpcIDList { get; set; }
 
         [JsonProperty("newEnemyIDList")]
-        public List<string> NewEnemyIDList { get; set; }
+        public string[] NewEnemyIDList { get; set; }
 
         [JsonProperty("newTutorialIDList")]
-        public List<string> NewTutorialIDList { get; set; }
+        public string[] NewTutorialIDList { get; set; }
 
         [JsonProperty("newDiseaseDataList")]
         public List<object> NewDiseaseDataList { get; set; }
 
         [JsonProperty("newQuestDataList")]
-        public List<NewQuestDataList> NewQuestDataList { get; set; }
+        public string[] NewQuestDataList { get; set; }
 
         [JsonProperty("eventStateData")]
         public List<EventStateDatum> EventStateData { get; set; }
