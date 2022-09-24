@@ -36,6 +36,7 @@ namespace PermitSaveEditor
 
             CarpenterLevel.Text = saveData.CarpenterLevel.ToString();
             BlacksmithLevel.Text = saveData.BlacksmithLevel.ToString();
+            BadgeLevel.Text = saveData.BadgeLevel.ToString();
 
             var isFemale = saveData.Gender == 1;
             MaleGenderRadio.IsChecked = !isFemale;
@@ -48,6 +49,10 @@ namespace PermitSaveEditor
 
             _loadedSave.CharacterName = PlayerName.Text;
             _loadedSave.DogName = DogName.Text;
+
+            _loadedSave.CarpenterLevel = int.Parse(CarpenterLevel.Text);
+            _loadedSave.BlacksmithLevel = int.Parse(BlacksmithLevel.Text);
+            _loadedSave.BadgeLevel = int.Parse(BadgeLevel.Text);
 
             _loadedSave.Gold = int.Parse(Gold.Text);
             _loadedSave.Wood = int.Parse(Wood.Text);

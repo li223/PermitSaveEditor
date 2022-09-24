@@ -40,12 +40,14 @@
                     <Label Content="Gender" HorizontalAlignment="Left" Margin="14,60,0,0" VerticalAlignment="Top" Height="26" Width="49"/>
                     <TextBlock HorizontalAlignment="Left" Margin="484,8,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="96" Height="16"><Run Text="Carpenter Level"/><Run Language="en-gb" Text=":"/></TextBlock>
                     <TextBox x:Name="CarpenterLevel" HorizontalAlignment="Left" Margin="585,6,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="41" Height="18"/>
-                    <TextBlock HorizontalAlignment="Left" Margin="484,0,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="96" Height="16"><Run Text="Blacksmith Level"/><Run Language="en-gb" Text=":"/></TextBlock>
-                    <TextBox x:Name="BlacksmithLevel" HorizontalAlignment="Left" Margin="585,0,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Center" Width="41" Height="18"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="484,38,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="96" Height="16"><Run Text="Blacksmith Level"/><Run Language="en-gb" Text=":"/></TextBlock>
+                    <TextBox x:Name="BlacksmithLevel" HorizontalAlignment="Left" Margin="585,38,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="41" Height="18"/>
                     <xctk:ColorPicker DisplayColorAndName="False" x:Name="HairColour" Margin="96,52,32,131" Grid.Row="1" />
                     <xctk:ColorPicker DisplayColorAndName="False" x:Name="EyeColour" Margin="96,92,32,92" Grid.Row="1" />
                     <xctk:ColorPicker DisplayColorAndName="False" x:Name="OutfitColour" Margin="96,127,32,55" Grid.Row="1" />
                     <xctk:ColorPicker DisplayColorAndName="False" x:Name="CapeColour" Margin="96,163,32,20" Grid.Row="1" />
+                    <TextBlock HorizontalAlignment="Left" Margin="484,69,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="96" Height="16"><Run Text="Badge Level"/><Run Language="en-gb" Text=":"/></TextBlock>
+                    <TextBox x:Name="BadgeLevel" HorizontalAlignment="Left" Margin="585,68,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="41" Height="18"/>
                 </Grid>
             </TabItem>
             <TabItem x:Name="UnlockablesTab" Header="Unlockables" Margin="10,-2,-10,2">
