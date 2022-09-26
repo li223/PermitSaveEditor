@@ -30,7 +30,8 @@ namespace PermitSaveEditor
             {
                 DefaultExt = "rjson",
                 Title = "Load Data",
-                Filter = "Potion Permit Save data (.rjson)|*.rjson"
+                Filter = "Potion Permit Save data (.rjson)|*.rjson",
+                InitialDirectory = "%APPDATA%\\..\\LocalLow\\MasshiveMedia\\Potion Permit"
             };
 
             dialog.ShowDialog();

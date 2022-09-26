@@ -38,6 +38,10 @@ namespace PermitSaveEditor
             BlacksmithLevel.Text = saveData.BlacksmithLevel.ToString();
             BadgeLevel.Text = saveData.BadgeLevel.ToString();
 
+            FishingLevel1.Text = saveData.FishExpDict.Values[0].ToString();
+            FishingLevel2.Text = saveData.FishExpDict.Values[1].ToString();
+            FishingLevel3.Text = saveData.FishExpDict.Values[2].ToString();
+
             var isFemale = saveData.Gender == 1;
             MaleGenderRadio.IsChecked = !isFemale;
             FemaleGenderRadio.IsChecked = isFemale;
@@ -65,6 +69,10 @@ namespace PermitSaveEditor
             _loadedSave.ClothColor = OutfitColour.SelectedColor!.Value.ToObjectsColor();
 
             _loadedSave.CapeColor = CapeColour.SelectedColor!.Value.ToObjectsColor();
+
+            _loadedSave.FishExpDict.Values[0] = int.Parse(FishingLevel1.Text);
+            _loadedSave.FishExpDict.Values[1] = int.Parse(FishingLevel2.Text);
+            _loadedSave.FishExpDict.Values[2] = int.Parse(FishingLevel3.Text);
 
             return JsonConvert.SerializeObject(_loadedSave);
         }
