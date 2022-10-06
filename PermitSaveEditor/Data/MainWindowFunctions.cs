@@ -79,8 +79,10 @@ namespace PermitSaveEditor
 
         public void HandleInputVisibility()
         {
+            if(MainWindow.IsRJsonFile)
+                DPJFile_Btn.Visibility = Visibility.Visible;
+
             SaveBtn.Visibility = Visibility.Visible;
-            DPJFile_Btn.Visibility = Visibility.Visible;
             UnlockablesTab.Visibility = Visibility.Visible;
 
             SkinUnlock.IsEnabled = !DataManager.AllEnabled(_loadedSave!.SkinLockStateList);

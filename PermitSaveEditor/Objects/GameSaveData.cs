@@ -136,7 +136,7 @@ namespace PermitSaveEditor.Objects
         public List<object> NewDiseaseDataList { get; set; }
 
         [JsonProperty("newQuestDataList")]
-        public string[] NewQuestDataList { get; set; }
+        public NewQuestDataList[] NewQuestDataList { get; set; }
 
         [JsonProperty("eventStateData")]
         public List<EventStateDatum> EventStateData { get; set; }

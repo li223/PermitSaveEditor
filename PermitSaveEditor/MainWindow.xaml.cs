@@ -12,7 +12,8 @@ namespace PermitSaveEditor
 {
     public partial class MainWindow : Window
     {
-        private string? _fileName;
+        public static bool IsRJsonFile => _fileName?.EndsWith("rjson") ?? false;
+        private static string? _fileName;
         private GameSaveData? _loadedSave;
 
         public MainWindow()
@@ -22,6 +23,7 @@ namespace PermitSaveEditor
             SaveBtn.Visibility = Visibility.Hidden;
             DPJFile_Btn.Visibility = Visibility.Hidden;
             UnlockablesTab.Visibility = Visibility.Hidden;
+            DPJFile_Btn.Visibility = Visibility.Hidden;
         }
 
         private async void LoadFileBtn_Click(object sender, RoutedEventArgs e)
@@ -48,12 +50,9 @@ namespace PermitSaveEditor
                     fs.Close();
 
                     var fileData = Encoding.UTF8.GetString(buffer);
-                    string fileJsonData = null;
+                    var fileJsonData = _fileName.EndsWith("rjson") ? DataManager.ExecuteCypher(fileData) : fileData;
 
-                    if (_fileName.EndsWith("rjson"))
-                        fileJsonData = DataManager.ExecuteCypher(fileData);
-
-                    var jsonData = JsonConvert.DeserializeObject<GameSaveData>(fileJsonData ?? fileData);
+                    var jsonData = JsonConvert.DeserializeObject<GameSaveData>(fileJsonData);
                     SetInputValues(jsonData!);
 
                     HandleInputVisibility();
