@@ -30,7 +30,7 @@ namespace PermitSaveEditor
             {
                 DefaultExt = "rjson",
                 Title = "Load Data",
-                Filter = "Potion Permit Save data (.rjson)|*.rjson",
+                Filter = "Potion Permit Save data (.rjson)|*.rjson|Potion Permit converted save data (.json)|*.json",
                 InitialDirectory = "%APPDATA%\\..\\LocalLow\\MasshiveMedia\\Potion Permit"
             };
 
@@ -48,9 +48,12 @@ namespace PermitSaveEditor
                     fs.Close();
 
                     var fileData = Encoding.UTF8.GetString(buffer);
-                    var fileJsonData = DataManager.ExecuteCypher(fileData);
+                    string fileJsonData = null;
 
-                    var jsonData = JsonConvert.DeserializeObject<GameSaveData>(fileJsonData);
+                    if (_fileName.EndsWith("rjson"))
+                        fileJsonData = DataManager.ExecuteCypher(fileData);
+
+                    var jsonData = JsonConvert.DeserializeObject<GameSaveData>(fileJsonData ?? fileData);
                     SetInputValues(jsonData!);
 
                     HandleInputVisibility();
