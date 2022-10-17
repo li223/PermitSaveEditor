@@ -20,10 +20,10 @@ namespace PermitSaveEditor
             Stone.Text = saveData.Stone.ToString();
 
             var (A, R, G, B) = saveData.SkinColor.ToArgb();
-            SkinColour.SelectedColor = System.Windows.Media.Color.FromArgb(A, R, G, B);
+            SkinColor.SelectedColor = System.Windows.Media.Color.FromArgb(A, R, G, B);
 
             (A, R, G, B) = saveData.HairColor.ToArgb();
-            HairColour.SelectedColor = System.Windows.Media.Color.FromArgb(A, R, G, B);
+            HairColor.SelectedColor = System.Windows.Media.Color.FromArgb(A, R, G, B);
 
             (A, R, G, B) = saveData.EyesColor.ToArgb();
             EyeColour.SelectedColor = System.Windows.Media.Color.FromArgb(A, R, G, B);
@@ -62,8 +62,8 @@ namespace PermitSaveEditor
             _loadedSave.Wood = int.Parse(Wood.Text);
             _loadedSave.Stone = int.Parse(Stone.Text);
 
-            _loadedSave.SkinColor = SkinColour.SelectedColor!.Value.ToObjectsColor();
-            _loadedSave.HairColor = HairColour.SelectedColor!.Value.ToObjectsColor();
+            _loadedSave.SkinColor = SkinColor.SelectedColor!.Value.ToObjectsColor();
+            _loadedSave.HairColor = HairColor.SelectedColor!.Value.ToObjectsColor();
 
             _loadedSave.EyesColor = EyeColour.SelectedColor!.Value.ToObjectsColor();
             _loadedSave.ClothColor = OutfitColour.SelectedColor!.Value.ToObjectsColor();

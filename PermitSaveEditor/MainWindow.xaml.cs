@@ -19,7 +19,7 @@ namespace PermitSaveEditor
         public MainWindow()
         {
             InitializeComponent();
-            Height = 400;
+           
             SaveBtn.Visibility = Visibility.Hidden;
             DPJFile_Btn.Visibility = Visibility.Hidden;
             UnlockablesTab.Visibility = Visibility.Hidden;
