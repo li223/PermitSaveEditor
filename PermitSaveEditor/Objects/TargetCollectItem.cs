@@ -4,9 +4,12 @@ namespace PermitSaveEditor.Objects;
 
 public class TargetCollectionItem
 {
-    [JsonProperty("item")] public string Item { get; set; }
+    [JsonProperty("item")] 
+    public string Item { get; set; }
 
-    [JsonProperty("count")] public int Count { get; set; }
+    [JsonProperty("count")] 
+    public int Count { get; set; }
 
-    [JsonProperty("requirementText")] public string RequirementText { get; set; }
+    [JsonProperty("requirementText")] 
+    public string RequirementText { get; set; }
 }

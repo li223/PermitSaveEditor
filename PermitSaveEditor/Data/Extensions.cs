@@ -5,10 +5,8 @@ namespace PermitSaveEditor.Data;
 
 public static class Extensions
 {
-    public static Color ToObjectsColor(this System.Windows.Media.Color color)
-    {
-        return new(color.R / 255.0, color.G / 255.0, color.B / 255.0, color.A / 255.0);
-    }
+    public static Objects.Color ToObjectsColor(this System.Windows.Media.Color color)
+        => new(color.R / 255.0, color.G / 255.0, color.B / 255.0, color.A / 255.0);
 
     public static void UnlockAll(this List<bool> list)
     {
@@ -17,13 +15,11 @@ public static class Extensions
     }
 
     public static void HealAll(this List<NpcHealthDataList> list)
-    {
-        list.ForEach(x =>
+        => list.ForEach(x =>
         {
             x.CureDelayCnt = 0;
             x.IsCure = false;
             x.IsSick = false;
             x.NpcHP = 10;
         });
-    }
 }
