@@ -1,16 +1,12 @@
 ﻿using Newtonsoft.Json;
 
-namespace PermitSaveEditor.Objects
+namespace PermitSaveEditor.Objects;
+
+public class QuestRequirementCheckerList
 {
-    public class QuestRequirementCheckerList
-    {
-        [JsonProperty("complete")]
-        public bool Complete { get; set; }
+    [JsonProperty("complete")] public bool Complete { get; set; }
 
-        [JsonProperty("prefixText")]
-        public string PrefixText { get; set; }
+    [JsonProperty("prefixText")] public string PrefixText { get; set; }
 
-        [JsonProperty("requirementText")]
-        public string RequirementText { get; set; }
-    }
+    [JsonProperty("requirementText")] public string RequirementText { get; set; }
 }
