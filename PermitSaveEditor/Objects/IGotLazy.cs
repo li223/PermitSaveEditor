@@ -1,534 +1,391 @@
-﻿using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using Newtonsoft.Json;
 
-namespace PermitSaveEditor.Objects
+namespace PermitSaveEditor.Objects;
+
+public class AssignQuestIDStacking
 {
-    public class AssignQuestIDStacking
-    {
-        [JsonProperty("npcID")]
-        public string NpcID { get; set; }
-
-        [JsonProperty("questID")]
-        public string QuestID { get; set; }
-    }
-
-    public class CampBedList
-    {
-        [JsonProperty("campBedObject")]
-        public CampBedObject CampBedObject { get; set; }
-
-        [JsonProperty("sickNPC")]
-        public int SickNPC { get; set; }
-    }
-
-    public class CampBedObject
-    {
-        [JsonProperty("m_FileID")]
-        public int MFileID { get; set; }
-
-        [JsonProperty("m_PathID")]
-        public int MPathID { get; set; }
-    }
-
-    public class CapsuleDict
-    {
-        [JsonProperty("reorderableList")]
-        public ReorderableList ReorderableList { get; set; }
-
-        [JsonProperty("reqReferences")]
-        public ReqReferences ReqReferences { get; set; }
-
-        [JsonProperty("isExpanded")]
-        public bool IsExpanded { get; set; }
-
-        [JsonProperty("_keyValues")]
-        public List<int> KeyValues { get; set; }
-
-        [JsonProperty("_keys")]
-        public List<int> Keys { get; set; }
-
-        [JsonProperty("_values")]
-        public List<bool> Values { get; set; }
-    }
-   
-    public class DeliveryItemList
-    {
-        [JsonProperty("itemID")]
-        public string ItemID { get; set; }
+    [JsonProperty("npcID")] public string NpcID { get; set; }
 
-        [JsonProperty("count")]
-        public int Count { get; set; }
-    }
+    [JsonProperty("questID")] public string QuestID { get; set; }
+}
 
-    public class DiseasePatternList
-    {
-        [JsonProperty("upgradeLevel")]
-        public int UpgradeLevel { get; set; }
-
-        [JsonProperty("pattern")]
-        public List<Pattern> Pattern { get; set; }
-    }
-
-    public class EnemySlainData
-    {
-        [JsonProperty("monsterID")]
-        public int MonsterID { get; set; }
+public class CampBedList
+{
+    [JsonProperty("campBedObject")] public CampBedObject CampBedObject { get; set; }
 
-        [JsonProperty("qty")]
-        public int Qty { get; set; }
-    }
+    [JsonProperty("sickNPC")] public int SickNPC { get; set; }
+}
 
-    public class EventStateDatum
-    {
-        [JsonProperty("eventID")]
-        public string EventID { get; set; }
+public class CampBedObject
+{
+    [JsonProperty("m_FileID")] public int MFileID { get; set; }
 
-        [JsonProperty("eventState")]
-        public string EventState { get; set; }
+    [JsonProperty("m_PathID")] public int MPathID { get; set; }
+}
 
-        [JsonProperty("eventDelay")]
-        public int EventDelay { get; set; }
-    }
+public class CapsuleDict
+{
+    [JsonProperty("reorderableList")] public ReorderableList ReorderableList { get; set; }
 
-    public class FastTravelState
-    {
-        [JsonProperty("reorderableList")]
-        public ReorderableList ReorderableList { get; set; }
+    [JsonProperty("reqReferences")] public ReqReferences ReqReferences { get; set; }
 
-        [JsonProperty("reqReferences")]
-        public ReqReferences ReqReferences { get; set; }
+    [JsonProperty("isExpanded")] public bool IsExpanded { get; set; }
 
-        [JsonProperty("isExpanded")]
-        public bool IsExpanded { get; set; }
+    [JsonProperty("_keyValues")] public List<int> KeyValues { get; set; }
 
-        [JsonProperty("_keyValues")]
-        public List<string> KeyValues { get; set; }
+    [JsonProperty("_keys")] public List<int> Keys { get; set; }
 
-        [JsonProperty("_keys")]
-        public List<string> Keys { get; set; }
+    [JsonProperty("_values")] public List<bool> Values { get; set; }
+}
 
-        [JsonProperty("_values")]
-        public List<bool> Values { get; set; }
-    }
+public class DeliveryItemList
+{
+    [JsonProperty("itemID")] public string ItemID { get; set; }
 
-    public class FishExpDict
-    {
-        [JsonProperty("reorderableList")]
-        public ReorderableList ReorderableList { get; set; }
+    [JsonProperty("count")] public int Count { get; set; }
+}
 
-        [JsonProperty("reqReferences")]
-        public ReqReferences ReqReferences { get; set; }
+public class DiseasePatternList
+{
+    [JsonProperty("upgradeLevel")] public int UpgradeLevel { get; set; }
 
-        [JsonProperty("isExpanded")]
-        public bool IsExpanded { get; set; }
+    [JsonProperty("pattern")] public List<Pattern> Pattern { get; set; }
+}
 
-        [JsonProperty("_keyValues")]
-        public List<int> KeyValues { get; set; }
+public class EnemySlainData
+{
+    [JsonProperty("monsterID")] public int MonsterID { get; set; }
 
-        [JsonProperty("_keys")]
-        public List<int> Keys { get; set; }
+    [JsonProperty("qty")] public int Qty { get; set; }
+}
 
-        [JsonProperty("_values")]
-        public List<int> Values { get; set; }
-    }
+public class EventStateDatum
+{
+    [JsonProperty("eventID")] public string EventID { get; set; }
 
-    public class FishRecordList
-    {
-        [JsonProperty("FISH_ID")]
-        public int FISHID { get; set; }
+    [JsonProperty("eventState")] public string EventState { get; set; }
 
-        [JsonProperty("TOTAL")]
-        public int TOTAL { get; set; }
+    [JsonProperty("eventDelay")] public int EventDelay { get; set; }
+}
 
-        [JsonProperty("BEST_LBS")]
-        public double BESTLBS { get; set; }
-    }
+public class FastTravelState
+{
+    [JsonProperty("reorderableList")] public ReorderableList ReorderableList { get; set; }
 
-    public class ItemLockState
-    {
-        [JsonProperty("reorderableList")]
-        public ReorderableList ReorderableList { get; set; }
+    [JsonProperty("reqReferences")] public ReqReferences ReqReferences { get; set; }
 
-        [JsonProperty("reqReferences")]
-        public ReqReferences ReqReferences { get; set; }
+    [JsonProperty("isExpanded")] public bool IsExpanded { get; set; }
 
-        [JsonProperty("isExpanded")]
-        public bool IsExpanded { get; set; }
+    [JsonProperty("_keyValues")] public List<string> KeyValues { get; set; }
 
-        [JsonProperty("_keyValues")]
-        public List<string> KeyValues { get; set; }
+    [JsonProperty("_keys")] public List<string> Keys { get; set; }
 
-        [JsonProperty("_keys")]
-        public List<string> Keys { get; set; }
+    [JsonProperty("_values")] public List<bool> Values { get; set; }
+}
 
-        [JsonProperty("_values")]
-        public List<bool> Values { get; set; }
-    }
+public class FishExpDict
+{
+    [JsonProperty("reorderableList")] public ReorderableList ReorderableList { get; set; }
 
-    public class Items
-    {
-        [JsonProperty("reorderableList")]
-        public ReorderableList ReorderableList { get; set; }
+    [JsonProperty("reqReferences")] public ReqReferences ReqReferences { get; set; }
 
-        [JsonProperty("reqReferences")]
-        public ReqReferences ReqReferences { get; set; }
+    [JsonProperty("isExpanded")] public bool IsExpanded { get; set; }
 
-        [JsonProperty("isExpanded")]
-        public bool IsExpanded { get; set; }
+    [JsonProperty("_keyValues")] public List<int> KeyValues { get; set; }
 
-        [JsonProperty("_keyValues")]
-        public List<KeyValue> KeyValues { get; set; }
+    [JsonProperty("_keys")] public List<int> Keys { get; set; }
 
-        [JsonProperty("_keys")]
-        public List<object> Keys { get; set; }
+    [JsonProperty("_values")] public List<int> Values { get; set; }
+}
 
-        [JsonProperty("_values")]
-        public List<object> Values { get; set; }
-    }
+public class FishRecordList
+{
+    [JsonProperty("FISH_ID")] public int FISHID { get; set; }
 
-    public class KeyValue
-    {
-        [JsonProperty("m_FileID")]
-        public int MFileID { get; set; }
+    [JsonProperty("TOTAL")] public int TOTAL { get; set; }
 
-        [JsonProperty("m_PathID")]
-        public int MPathID { get; set; }
-    }
+    [JsonProperty("BEST_LBS")] public double BESTLBS { get; set; }
+}
 
-    public class MapResourceState
-    {
-        [JsonProperty("reorderableList")]
-        public ReorderableList ReorderableList { get; set; }
+public class ItemLockState
+{
+    [JsonProperty("reorderableList")] public ReorderableList ReorderableList { get; set; }
 
-        [JsonProperty("reqReferences")]
-        public ReqReferences ReqReferences { get; set; }
+    [JsonProperty("reqReferences")] public ReqReferences ReqReferences { get; set; }
 
-        [JsonProperty("isExpanded")]
-        public bool IsExpanded { get; set; }
+    [JsonProperty("isExpanded")] public bool IsExpanded { get; set; }
 
-        [JsonProperty("_keyValues")]
-        public List<string> KeyValues { get; set; }
+    [JsonProperty("_keyValues")] public List<string> KeyValues { get; set; }
 
-        [JsonProperty("_keys")]
-        public List<string> Keys { get; set; }
+    [JsonProperty("_keys")] public List<string> Keys { get; set; }
 
-        [JsonProperty("_values")]
-        public List<bool> Values { get; set; }
-    }
+    [JsonProperty("_values")] public List<bool> Values { get; set; }
+}
 
-    public class NpcFPDataList
-    {
-        [JsonProperty("npcID")]
-        public string NpcID { get; set; }
+public class Items
+{
+    [JsonProperty("reorderableList")] public ReorderableList ReorderableList { get; set; }
 
-        [JsonProperty("fpPoint")]
-        public int FpPoint { get; set; }
+    [JsonProperty("reqReferences")] public ReqReferences ReqReferences { get; set; }
 
-        [JsonProperty("fpLevel")]
-        public int FpLevel { get; set; }
-    }
+    [JsonProperty("isExpanded")] public bool IsExpanded { get; set; }
 
-    public class NpcHealthDataList
-    {
-        [JsonProperty("npcID")]
-        public string NpcID { get; set; }
+    [JsonProperty("_keyValues")] public List<KeyValue> KeyValues { get; set; }
 
-        [JsonProperty("isSick")]
-        public bool IsSick { get; set; }
+    [JsonProperty("_keys")] public List<object> Keys { get; set; }
 
-        [JsonProperty("isAway")]
-        public bool IsAway { get; set; }
+    [JsonProperty("_values")] public List<object> Values { get; set; }
+}
 
-        [JsonProperty("isCure")]
-        public bool IsCure { get; set; }
+public class KeyValue
+{
+    [JsonProperty("m_FileID")] public int MFileID { get; set; }
 
-        [JsonProperty("npcHP")]
-        public int NpcHP { get; set; }
+    [JsonProperty("m_PathID")] public int MPathID { get; set; }
+}
 
-        [JsonProperty("awayCnt")]
-        public int AwayCnt { get; set; }
+public class MapResourceState
+{
+    [JsonProperty("reorderableList")] public ReorderableList ReorderableList { get; set; }
 
-        [JsonProperty("cureDelayCnt")]
-        public int CureDelayCnt { get; set; }
-    }
+    [JsonProperty("reqReferences")] public ReqReferences ReqReferences { get; set; }
 
-    public class Pattern
-    {
-        [JsonProperty("symptomDifficulty")]
-        public List<int> SymptomDifficulty { get; set; }
-    }
+    [JsonProperty("isExpanded")] public bool IsExpanded { get; set; }
 
-    public class PlayerInventoryItemDatum
-    {
-        [JsonProperty("index")]
-        public int Index { get; set; }
+    [JsonProperty("_keyValues")] public List<string> KeyValues { get; set; }
 
-        [JsonProperty("itemIDString")]
-        public string ItemIDString { get; set; }
+    [JsonProperty("_keys")] public List<string> Keys { get; set; }
 
-        [JsonProperty("itemIconName")]
-        public string ItemIconName { get; set; }
+    [JsonProperty("_values")] public List<bool> Values { get; set; }
+}
 
-        [JsonProperty("itemQty")]
-        public int ItemQty { get; set; }
+public class NpcFPDataList
+{
+    [JsonProperty("npcID")] public string NpcID { get; set; }
 
-        [JsonProperty("itemID")]
-        public int ItemID { get; set; }
+    [JsonProperty("fpPoint")] public int FpPoint { get; set; }
 
-        [JsonProperty("itemGrade")]
-        public int ItemGrade { get; set; }
+    [JsonProperty("fpLevel")] public int FpLevel { get; set; }
+}
 
-        [JsonProperty("itemType")]
-        public int ItemType { get; set; }
+public class NpcHealthDataList
+{
+    [JsonProperty("npcID")] public string NpcID { get; set; }
 
-        [JsonProperty("itemPuzzleShape")]
-        public int ItemPuzzleShape { get; set; }
+    [JsonProperty("isSick")] public bool IsSick { get; set; }
 
-        [JsonProperty("itemElement")]
-        public int ItemElement { get; set; }
+    [JsonProperty("isAway")] public bool IsAway { get; set; }
 
-        [JsonProperty("materialType")]
-        public int MaterialType { get; set; }
+    [JsonProperty("isCure")] public bool IsCure { get; set; }
 
-        [JsonProperty("spawnAreaList")]
-        public List<int> SpawnAreaList { get; set; }
+    [JsonProperty("npcHP")] public int NpcHP { get; set; }
 
-        [JsonProperty("buyingPrice")]
-        public int BuyingPrice { get; set; }
+    [JsonProperty("awayCnt")] public int AwayCnt { get; set; }
 
-        [JsonProperty("sellingPrice")]
-        public int SellingPrice { get; set; }
+    [JsonProperty("cureDelayCnt")] public int CureDelayCnt { get; set; }
+}
 
-        [JsonProperty("health")]
-        public int Health { get; set; }
+public class Pattern
+{
+    [JsonProperty("symptomDifficulty")] public List<int> SymptomDifficulty { get; set; }
+}
 
-        [JsonProperty("stamina")]
-        public int Stamina { get; set; }
-    }
+public class PlayerInventoryItemDatum
+{
+    [JsonProperty("index")] public int Index { get; set; }
 
-    public class PlayerVendingDatum
-    {
-        [JsonProperty("index")]
-        public int Index { get; set; }
+    [JsonProperty("itemIDString")] public string ItemIDString { get; set; }
 
-        [JsonProperty("itemIDString")]
-        public string ItemIDString { get; set; }
+    [JsonProperty("itemIconName")] public string ItemIconName { get; set; }
 
-        [JsonProperty("itemIconName")]
-        public string ItemIconName { get; set; }
+    [JsonProperty("itemQty")] public int ItemQty { get; set; }
 
-        [JsonProperty("itemQty")]
-        public int ItemQty { get; set; }
+    [JsonProperty("itemID")] public int ItemID { get; set; }
 
-        [JsonProperty("itemID")]
-        public int ItemID { get; set; }
+    [JsonProperty("itemGrade")] public int ItemGrade { get; set; }
 
-        [JsonProperty("itemGrade")]
-        public int ItemGrade { get; set; }
+    [JsonProperty("itemType")] public int ItemType { get; set; }
 
-        [JsonProperty("itemType")]
-        public int ItemType { get; set; }
+    [JsonProperty("itemPuzzleShape")] public int ItemPuzzleShape { get; set; }
 
-        [JsonProperty("itemPuzzleShape")]
-        public int ItemPuzzleShape { get; set; }
+    [JsonProperty("itemElement")] public int ItemElement { get; set; }
 
-        [JsonProperty("itemElement")]
-        public int ItemElement { get; set; }
+    [JsonProperty("materialType")] public int MaterialType { get; set; }
 
-        [JsonProperty("materialType")]
-        public int MaterialType { get; set; }
+    [JsonProperty("spawnAreaList")] public List<int> SpawnAreaList { get; set; }
 
-        [JsonProperty("spawnAreaList")]
-        public List<object> SpawnAreaList { get; set; }
+    [JsonProperty("buyingPrice")] public int BuyingPrice { get; set; }
 
-        [JsonProperty("buyingPrice")]
-        public int BuyingPrice { get; set; }
+    [JsonProperty("sellingPrice")] public int SellingPrice { get; set; }
 
-        [JsonProperty("sellingPrice")]
-        public int SellingPrice { get; set; }
+    [JsonProperty("health")] public int Health { get; set; }
 
-        [JsonProperty("health")]
-        public int Health { get; set; }
+    [JsonProperty("stamina")] public int Stamina { get; set; }
+}
 
-        [JsonProperty("stamina")]
-        public int Stamina { get; set; }
-    }
+public class PlayerVendingDatum
+{
+    [JsonProperty("index")] public int Index { get; set; }
 
-    public class Position
-    {
-        [JsonProperty("x")]
-        public int X { get; set; }
+    [JsonProperty("itemIDString")] public string ItemIDString { get; set; }
 
-        [JsonProperty("y")]
-        public int Y { get; set; }
-    }
+    [JsonProperty("itemIconName")] public string ItemIconName { get; set; }
 
-    public class PotionLockState
-    {
-        [JsonProperty("reorderableList")]
-        public ReorderableList ReorderableList { get; set; }
+    [JsonProperty("itemQty")] public int ItemQty { get; set; }
 
-        [JsonProperty("reqReferences")]
-        public ReqReferences ReqReferences { get; set; }
+    [JsonProperty("itemID")] public int ItemID { get; set; }
 
-        [JsonProperty("isExpanded")]
-        public bool IsExpanded { get; set; }
+    [JsonProperty("itemGrade")] public int ItemGrade { get; set; }
 
-        [JsonProperty("_keyValues")]
-        public List<string> KeyValues { get; set; }
+    [JsonProperty("itemType")] public int ItemType { get; set; }
 
-        [JsonProperty("_keys")]
-        public List<string> Keys { get; set; }
+    [JsonProperty("itemPuzzleShape")] public int ItemPuzzleShape { get; set; }
 
-        [JsonProperty("_values")]
-        public List<bool> Values { get; set; }
-    }
+    [JsonProperty("itemElement")] public int ItemElement { get; set; }
 
-    public class PotionSaveDatum
-    {
-        [JsonProperty("craftCount")]
-        public int CraftCount { get; set; }
+    [JsonProperty("materialType")] public int MaterialType { get; set; }
 
-        [JsonProperty("potionRecipe_1")]
-        public List<object> PotionRecipe1 { get; set; }
+    [JsonProperty("spawnAreaList")] public List<object> SpawnAreaList { get; set; }
 
-        [JsonProperty("potionRecipe_2")]
-        public List<object> PotionRecipe2 { get; set; }
+    [JsonProperty("buyingPrice")] public int BuyingPrice { get; set; }
 
-        [JsonProperty("potionRecipe_3")]
-        public List<object> PotionRecipe3 { get; set; }
+    [JsonProperty("sellingPrice")] public int SellingPrice { get; set; }
 
-        [JsonProperty("potionID")]
-        public int PotionID { get; set; }
+    [JsonProperty("health")] public int Health { get; set; }
 
-        [JsonProperty("potionIDStr")]
-        public string PotionIDStr { get; set; }
-    }
+    [JsonProperty("stamina")] public int Stamina { get; set; }
+}
 
-    public class ProgressionObjDataList
-    {
-        [JsonProperty("progressionID")]
-        public string ProgressionID { get; set; }
+public class Position
+{
+    [JsonProperty("x")] public int X { get; set; }
 
-        [JsonProperty("isActive")]
-        public bool IsActive { get; set; }
-    }
+    [JsonProperty("y")] public int Y { get; set; }
+}
 
-    public class QuestCollectReq
-    {
-        [JsonProperty("TARGET_COLLECT_ITEM")]
-        public List<TargetCollectionItem> TargetCollectionItem { get; set; }
-    }
+public class PotionLockState
+{
+    [JsonProperty("reorderableList")] public ReorderableList ReorderableList { get; set; }
 
-    public class QuestDeliveryReq
-    {
-        [JsonProperty("CURRENT_DELIVERY")]
-        public List<int> CURRENTDELIVERY { get; set; }
+    [JsonProperty("reqReferences")] public ReqReferences ReqReferences { get; set; }
 
-        [JsonProperty("TARGET_DELIVERY")]
-        public List<TargetDelivery> TargetDelivery { get; set; }
-    }
+    [JsonProperty("isExpanded")] public bool IsExpanded { get; set; }
 
-    public class QuestEventReq
-    {
-        [JsonProperty("CURRENT_EVENT_TRIGGERED")]
-        public List<object> CurrentEventTriggered { get; set; }
+    [JsonProperty("_keyValues")] public List<string> KeyValues { get; set; }
 
-        [JsonProperty("TARGET_EVENT_TRIGGERED")]
-        public List<TargetEventTriggered> TargetEventTriggered { get; set; }
-    }
+    [JsonProperty("_keys")] public List<string> Keys { get; set; }
 
-    public class QuestKillReq
-    {
-        [JsonProperty("CURRENT_KILL_MONSTER")]
-        public List<object> CurrentKillMonster { get; set; }
+    [JsonProperty("_values")] public List<bool> Values { get; set; }
+}
 
-        [JsonProperty("TARGET_KILL_MONSTER")]
-        public List<object> TargetKillMonster { get; set; }
-    }
+public class PotionSaveDatum
+{
+    [JsonProperty("craftCount")] public int CraftCount { get; set; }
 
-    public class QuestPosition
-    {
-        [JsonProperty("x")]
-        public double X { get; set; }
+    [JsonProperty("potionRecipe_1")] public List<object> PotionRecipe1 { get; set; }
 
-        [JsonProperty("y")]
-        public double Y { get; set; }
-    }
+    [JsonProperty("potionRecipe_2")] public List<object> PotionRecipe2 { get; set; }
 
-    public class QuestPostCompleteData
-    {
-        [JsonProperty("completeID")]
-        public string CompleteID { get; set; }
+    [JsonProperty("potionRecipe_3")] public List<object> PotionRecipe3 { get; set; }
 
-        [JsonProperty("commandUI")]
-        public string CommandUI { get; set; }
+    [JsonProperty("potionID")] public int PotionID { get; set; }
 
-        [JsonProperty("increaseFP")]
-        public bool IncreaseFP { get; set; }
+    [JsonProperty("potionIDStr")] public string PotionIDStr { get; set; }
+}
 
-        [JsonProperty("getItem")]
-        public bool GetItem { get; set; }
+public class ProgressionObjDataList
+{
+    [JsonProperty("progressionID")] public string ProgressionID { get; set; }
 
-        [JsonProperty("activeEvent")]
-        public bool ActiveEvent { get; set; }
+    [JsonProperty("isActive")] public bool IsActive { get; set; }
+}
 
-        [JsonProperty("activeQuest")]
-        public bool ActiveQuest { get; set; }
+public class QuestCollectReq
+{
+    [JsonProperty("TARGET_COLLECT_ITEM")] public List<TargetCollectionItem> TargetCollectionItem { get; set; }
+}
 
-        [JsonProperty("activeObject")]
-        public bool ActiveObject { get; set; }
+public class QuestDeliveryReq
+{
+    [JsonProperty("CURRENT_DELIVERY")] public List<int> CURRENTDELIVERY { get; set; }
 
-        [JsonProperty("playerStat")]
-        public bool PlayerStat { get; set; }
+    [JsonProperty("TARGET_DELIVERY")] public List<TargetDelivery> TargetDelivery { get; set; }
+}
 
-        [JsonProperty("badgeLevelUp")]
-        public bool BadgeLevelUp { get; set; }
+public class QuestEventReq
+{
+    [JsonProperty("CURRENT_EVENT_TRIGGERED")]
+    public List<object> CurrentEventTriggered { get; set; }
 
-        [JsonProperty("reputationLevelUp")]
-        public bool ReputationLevelUp { get; set; }
+    [JsonProperty("TARGET_EVENT_TRIGGERED")]
+    public List<TargetEventTriggered> TargetEventTriggered { get; set; }
+}
 
-        [JsonProperty("getWood")]
-        public int GetWood { get; set; }
+public class QuestKillReq
+{
+    [JsonProperty("CURRENT_KILL_MONSTER")] public List<object> CurrentKillMonster { get; set; }
 
-        [JsonProperty("getStone")]
-        public int GetStone { get; set; }
+    [JsonProperty("TARGET_KILL_MONSTER")] public List<object> TargetKillMonster { get; set; }
+}
 
-        [JsonProperty("repeatEvent")]
-        public bool RepeatEvent { get; set; }
+public class QuestPosition
+{
+    [JsonProperty("x")] public double X { get; set; }
 
-        [JsonProperty("cameraFieldConfiner")]
-        public int CameraFieldConfiner { get; set; }
+    [JsonProperty("y")] public double Y { get; set; }
+}
 
-        [JsonProperty("goldReward")]
-        public int GoldReward { get; set; }
+public class QuestPostCompleteData
+{
+    [JsonProperty("completeID")] public string CompleteID { get; set; }
 
-        [JsonProperty("chainEventDetail")]
-        public int ChainEventDetail { get; set; }
+    [JsonProperty("commandUI")] public string CommandUI { get; set; }
 
-        [JsonProperty("questEventDetail")]
-        public int QuestEventDetail { get; set; }
+    [JsonProperty("increaseFP")] public bool IncreaseFP { get; set; }
 
-        [JsonProperty("FriendshipPointStackings")]
-        public List<object> FriendshipPointStackings { get; set; }
+    [JsonProperty("getItem")] public bool GetItem { get; set; }
 
-        [JsonProperty("ItemDetailList")]
-        public List<object> ItemDetailList { get; set; }
+    [JsonProperty("activeEvent")] public bool ActiveEvent { get; set; }
 
-        [JsonProperty("ActiveQuestIDStackings")]
-        public List<object> ActiveQuestIDStackings { get; set; }
+    [JsonProperty("activeQuest")] public bool ActiveQuest { get; set; }
 
-        [JsonProperty("AssignQuestIDStackings")]
-        public List<AssignQuestIDStacking> AssignQuestIDStackings { get; set; }
+    [JsonProperty("activeObject")] public bool ActiveObject { get; set; }
 
-        [JsonProperty("ActiveEventDetailList")]
-        public List<object> ActiveEventDetailList { get; set; }
+    [JsonProperty("playerStat")] public bool PlayerStat { get; set; }
 
-        [JsonProperty("ProgressionObjDataList")]
-        public List<object> ProgressionObjDataList { get; set; }
-    }
+    [JsonProperty("badgeLevelUp")] public bool BadgeLevelUp { get; set; }
+
+    [JsonProperty("reputationLevelUp")] public bool ReputationLevelUp { get; set; }
+
+    [JsonProperty("getWood")] public int GetWood { get; set; }
+
+    [JsonProperty("getStone")] public int GetStone { get; set; }
+
+    [JsonProperty("repeatEvent")] public bool RepeatEvent { get; set; }
+
+    [JsonProperty("cameraFieldConfiner")] public int CameraFieldConfiner { get; set; }
+
+    [JsonProperty("goldReward")] public int GoldReward { get; set; }
+
+    [JsonProperty("chainEventDetail")] public int ChainEventDetail { get; set; }
+
+    [JsonProperty("questEventDetail")] public int QuestEventDetail { get; set; }
+
+    [JsonProperty("FriendshipPointStackings")]
+    public List<object> FriendshipPointStackings { get; set; }
+
+    [JsonProperty("ItemDetailList")] public List<object> ItemDetailList { get; set; }
+
+    [JsonProperty("ActiveQuestIDStackings")]
+    public List<object> ActiveQuestIDStackings { get; set; }
+
+    [JsonProperty("AssignQuestIDStackings")]
+    public List<AssignQuestIDStacking> AssignQuestIDStackings { get; set; }
+
+    [JsonProperty("ActiveEventDetailList")]
+    public List<object> ActiveEventDetailList { get; set; }
+
+    [JsonProperty("ProgressionObjDataList")]
+    public List<object> ProgressionObjDataList { get; set; }
 }

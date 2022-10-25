@@ -1,6 +1,5 @@
-﻿namespace PermitSaveEditor.Objects
+﻿namespace PermitSaveEditor.Objects;
+
+public class ReorderableList
 {
-    public class ReorderableList
-    {
-    }
 }

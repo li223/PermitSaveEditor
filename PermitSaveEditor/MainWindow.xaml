@@ -7,7 +7,8 @@
         mc:Ignorable="d"
         Title="Potion Permit Save Editor"
         Height="470" Width="650"
-        MinHeight="470" MinWidth="650">
+        MinHeight="470" MinWidth="650"
+        Background="#202020">
 
 
     <Grid>
@@ -27,12 +28,14 @@
                         Width="58"
                         Name="LoadFileBtn"
                         Click="LoadFileBtn_Click"
-                        Margin="0,0,8,0" />
+                        Margin="0,0,8,0"
+                        Style="{StaticResource MainButtonTheme}" />
 
                 <TextBlock TextWrapping="Wrap"
                            Text="File Name"
                            Name="LoadedFileText"
-                           VerticalAlignment="Center" />
+                           VerticalAlignment="Center"
+                           Foreground="White" />
             </StackPanel>
 
 
@@ -43,12 +46,14 @@
                 <Button Name="SaveBtn"
                         Content="Save"
                         Click="SaveBtn_Click" Height="24" Width="38"
-                        Margin="0,0,8,0" />
+                        Margin="0,0,8,0"
+                        Style="{StaticResource MainButtonTheme}" />
 
                 <Button x:Name="DPJFile_Btn"
                         Content="Download Plain Json File"
                         Click="DPJFile_Btn_Click"
-                        Height="24" Width="145" />
+                        Height="24" Width="145"
+                        Style="{StaticResource MainButtonTheme}" />
             </StackPanel>
 
 
@@ -56,9 +61,10 @@
 
 
         <DockPanel Grid.Row="1">
-            <TabControl>
-                <TabItem Header="General" BorderBrush="#FFACACAC">
-                    <Grid Background="#FFE5E5E5">
+            <TabControl Background="#202020" BorderThickness="0">
+                <TabItem Header="General" Style="{StaticResource TabItemStyle}">
+
+                    <Grid>
                         <Grid.RowDefinitions>
                             <RowDefinition Height="30" />
                             <RowDefinition Height="30" />
@@ -67,7 +73,7 @@
                             <RowDefinition />
                         </Grid.RowDefinitions>
 
-                        <Grid Margin="10,10,0,0">
+                        <Grid Margin="10,0,0,0">
 
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition />
@@ -88,7 +94,8 @@
                                          Name="PlayerName"
                                          Text="Logan"
                                          HorizontalAlignment="Left"
-                                         Grid.Column="1" />
+                                         Grid.Column="1"
+                                         Style="{StaticResource MainTextBoxTheme}" />
                             </Grid>
 
                             <Grid Grid.Column="1">
@@ -104,7 +111,8 @@
                                          HorizontalAlignment="Left"
                                          Name="Gold"
                                          Text="0"
-                                         Grid.Column="1" />
+                                         Grid.Column="1"
+                                         Style="{StaticResource MainTextBoxTheme}" />
                             </Grid>
 
                             <Grid Grid.Column="2">
@@ -121,11 +129,12 @@
                                          HorizontalAlignment="Left"
                                          Name="CarpenterLevel"
                                          Text="0"
-                                         Grid.Column="1" />
+                                         Grid.Column="1"
+                                         Style="{StaticResource MainTextBoxTheme}" />
                             </Grid>
                         </Grid>
 
-                        <Grid Grid.Row="1" Margin="10,10,0,0">
+                        <Grid Grid.Row="1" Margin="10,0,0,0">
 
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition />
@@ -146,7 +155,8 @@
                                          Name="DogName"
                                          HorizontalAlignment="Left"
                                          Text="Noxe"
-                                         Grid.Column="1" />
+                                         Grid.Column="1"
+                                         Style="{StaticResource MainTextBoxTheme}" />
                             </Grid>
 
                             <Grid Grid.Column="1">
@@ -162,7 +172,8 @@
                                          HorizontalAlignment="Left"
                                          Name="Wood"
                                          Text="0"
-                                         Grid.Column="1" />
+                                         Grid.Column="1"
+                                         Style="{StaticResource MainTextBoxTheme}" />
                             </Grid>
 
                             <Grid Grid.Column="2">
@@ -179,11 +190,12 @@
                                          HorizontalAlignment="Left"
                                          Name="BlacksmithLevel"
                                          Text="0"
-                                         Grid.Column="1" />
+                                         Grid.Column="1"
+                                         Style="{StaticResource MainTextBoxTheme}" />
                             </Grid>
                         </Grid>
 
-                        <Grid Grid.Row="2" Margin="10,10,0,0">
+                        <Grid Grid.Row="2" Margin="10,0,0,0">
 
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition />
@@ -204,9 +216,11 @@
                                       Width="125"
                                       HorizontalAlignment="Left">
                                     <RadioButton Content="Male" GroupName="Gender" IsChecked="True"
-                                                 Name="MaleGenderRadio" />
+                                                 Name="MaleGenderRadio"
+                                                 Style="{StaticResource DarkRadioButton}" />
                                     <RadioButton Content="Female" GroupName="Gender" Name="FemaleGenderRadio"
-                                                 HorizontalAlignment="Right" />
+                                                 HorizontalAlignment="Right"
+                                                 Style="{StaticResource DarkRadioButton}" />
                                 </Grid>
                             </Grid>
 
@@ -223,7 +237,8 @@
                                          HorizontalAlignment="Left"
                                          Name="Stone"
                                          Text="0"
-                                         Grid.Column="1" />
+                                         Grid.Column="1"
+                                         Style="{StaticResource MainTextBoxTheme}" />
                             </Grid>
 
                             <Grid Grid.Column="2">
@@ -240,11 +255,12 @@
                                          HorizontalAlignment="Left"
                                          Name="BadgeLevel"
                                          Text="0"
-                                         Grid.Column="1" />
+                                         Grid.Column="1"
+                                         Style="{StaticResource MainTextBoxTheme}" />
                             </Grid>
                         </Grid>
 
-                        <Grid Grid.Row="3" Margin="10,10,0,0">
+                        <Grid Grid.Row="3" Margin="10,0,0,0">
 
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition />
@@ -270,65 +286,102 @@
                                          Name="FishingLevel1"
                                          HorizontalAlignment="Left"
                                          Grid.Column="1"
-                                         Text="0" />
+                                         Text="0"
+                                         Style="{StaticResource MainTextBoxTheme}" />
 
                                 <TextBox Width="20"
                                          VerticalAlignment="Center"
                                          HorizontalAlignment="Left"
                                          Name="FishingLevel2"
                                          Grid.Column="2"
-                                         Text="0" />
+                                         Text="0"
+                                         Style="{StaticResource MainTextBoxTheme}" />
 
                                 <TextBox Width="20"
                                          VerticalAlignment="Center"
                                          HorizontalAlignment="Left"
                                          Name="FishingLevel3"
                                          Grid.Column="3"
-                                         Text="0" />
+                                         Text="0"
+                                         Style="{StaticResource MainTextBoxTheme}" />
                             </Grid>
                         </Grid>
 
                         <StackPanel Grid.Row="4" Margin="10">
 
                             <TextBlock Text="Skin Color" />
-                            <xctk:ColorPicker DisplayColorAndName="False" x:Name="SkinColor" Margin="0,4,0,0" />
+                            <xctk:ColorPicker DisplayColorAndName="False"
+                                              x:Name="SkinColor"
+                                              Margin="0,4,0,0"
+                                              Background="#252525" />
 
                             <TextBlock Text="Hair Color" />
-                            <xctk:ColorPicker DisplayColorAndName="False" x:Name="HairColor" Margin="0,4,0,0" />
+                            <xctk:ColorPicker DisplayColorAndName="False"
+                                              x:Name="HairColor"
+                                              Margin="0,4,0,0"
+                                              Background="#252525" />
                             <TextBlock Text="Eye Color" />
-                            <xctk:ColorPicker DisplayColorAndName="False" x:Name="EyeColour" Margin="0,4,0,0" />
+                            <xctk:ColorPicker DisplayColorAndName="False"
+                                              x:Name="EyeColour"
+                                              Margin="0,4,0,0"
+                                              Background="#252525" />
 
                             <TextBlock Text="Outfit Color" />
-                            <xctk:ColorPicker DisplayColorAndName="False" x:Name="OutfitColour" Margin="0,4,0,0" />
+                            <xctk:ColorPicker DisplayColorAndName="False"
+                                              x:Name="OutfitColour"
+                                              Margin="0,4,0,0"
+                                              Background="#252525" />
 
                             <TextBlock Text="Cape Color" />
-                            <xctk:ColorPicker DisplayColorAndName="False" x:Name="CapeColour" Margin="0,4,0,0" />
+                            <xctk:ColorPicker DisplayColorAndName="False"
+                                              x:Name="CapeColour"
+                                              Margin="0,4,0,0"
+                                              Background="#252525" />
                         </StackPanel>
 
 
                     </Grid>
                 </TabItem>
-                <TabItem x:Name="UnlockablesTab" Header="Unlockables">
-                    <StackPanel Background="#FFE5E5E5">
-                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,8,0,0">
-                            <Button x:Name="SkinUnlock" Content="Unlock All Skins" Margin="8" Padding="4"
-                                    Click="SkinUnlock_Click" />
-                            <Button x:Name="HairUnlock" Content="Unlock All Hair" Margin="8" Padding="4"
-                                    Click="HairUnlock_Click" />
-                            <Button x:Name="ClothUnlock" Content="Unlock All Cloth" Margin="8" Padding="4"
-                                    Click="ClothUnlock_Click" />
-                            <Button x:Name="CapeUnlock" Content="Unlock All Capes" Margin="8" Padding="4"
-                                    Click="CapeUnlock_Click" />
-                            <Button x:Name="FastTravelUnlock" Content="Unlock All Fast Travel Points" Margin="8"
-                                    Padding="4" Click="FastTravelUnlock_Click" />
+                <TabItem x:Name="UnlockablesTab" Header="Unlockables" Style="{StaticResource TabItemStyle}">
+                    <StackPanel Margin="10">
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                            <Button x:Name="SkinUnlock" Content="Unlock All Skins" Margin="2"
+                                    Width="100" Height="25"
+                                    Click="SkinUnlock_Click"
+                                    Style="{StaticResource MainButtonTheme}" />
+                            <Button x:Name="HairUnlock" Content="Unlock All Hair" Margin="2"
+                                    Click="HairUnlock_Click"
+                                    Width="100" Height="25"
+                                    Style="{StaticResource MainButtonTheme}" />
+                            <Button x:Name="ClothUnlock" Content="Unlock All Cloth" Margin="2"
+                                    Click="ClothUnlock_Click"
+                                    Width="100" Height="25"
+                                    Style="{StaticResource MainButtonTheme}" />
+                            <Button x:Name="CapeUnlock" Content="Unlock All Capes" Margin="2"
+                                    Click="CapeUnlock_Click"
+                                    Width="100" Height="25"
+                                    Style="{StaticResource MainButtonTheme}" />
+
 
                         </StackPanel>
                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,8,0,0">
-                            <Button x:Name="RecipesUnlock" Content="Unlock All Recipes" Margin="8" Padding="4"
-                                    Click="RecipesUnlock_Click" />
-                            <Button x:Name="PotionsUnlock" Content="Unlock All Potions" Margin="8" Padding="4"
-                                    Click="PotionsUnlock_Click" />
-                            <Button x:Name="HealAll" Content="Heal All" Margin="8" Padding="4" Click="HealAll_Click" />
+
+                            <Button x:Name="FastTravelUnlock" Content="Unlock All Fast Travel Points" Margin="2"
+                                    Click="FastTravelUnlock_Click"
+                                    Width="155" Height="25"
+                                    Style="{StaticResource MainButtonTheme}" />
+                            <Button x:Name="RecipesUnlock" Content="Unlock All Recipes" Margin="2"
+                                    Width="125" Height="25"
+                                    Click="RecipesUnlock_Click"
+                                    Style="{StaticResource MainButtonTheme}" />
+                            <Button x:Name="PotionsUnlock" Content="Unlock All Potions" Margin="2"
+                                    Click="PotionsUnlock_Click"
+                                    Width="125" Height="25"
+                                    Style="{StaticResource MainButtonTheme}" />
+                            <Button x:Name="HealAll" Content="Heal All" Margin="2"
+                                    Width="125" Height="25"
+                                    Click="HealAll_Click"
+                                    Style="{StaticResource MainButtonTheme}" />
                         </StackPanel>
 
                     </StackPanel>
@@ -338,5 +391,3 @@
 
     </Grid>
 </Window>
-
-

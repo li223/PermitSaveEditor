@@ -1,13 +1,10 @@
 ﻿using Newtonsoft.Json;
 
-namespace PermitSaveEditor.Objects
-{
-    public class QuestProgressList
-    {
-        [JsonProperty("questID")]
-        public string QuestID { get; set; }
+namespace PermitSaveEditor.Objects;
 
-        [JsonProperty("questState")]
-        public string QuestState { get; set; }
-    }
+public class QuestProgressList
+{
+    [JsonProperty("questID")] public string QuestID { get; set; }
+
+    [JsonProperty("questState")] public string QuestState { get; set; }
 }
