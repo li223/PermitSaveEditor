@@ -1,5 +1,7 @@
 ﻿using System.Linq;
 using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Input;
 using Newtonsoft.Json;
 using PermitSaveEditor.Data;
 using PermitSaveEditor.Objects;
@@ -93,5 +95,56 @@ public partial class MainWindow
         RecipesUnlock.IsEnabled = !DataManager.AllEnabled(_loadedSave!.RecipeLockState.Values);
         PotionsUnlock.IsEnabled = !DataManager.AllEnabled(_loadedSave!.PotionLockState.Values);
         HealAll.IsEnabled = !DataManager.AllEnabled(_loadedSave!.NpcHealthDataList.Select(x => !x.IsSick));
+    }
+
+    static bool IsValid(string str, int min, int max)
+    {
+        int i;
+        return int.TryParse(str, out i) && i >= min && i <= max;
+    }
+
+    private void Gold_OnPreviewTextInput(object sender, TextCompositionEventArgs e)
+    {
+        e.Handled = !IsValid(((TextBox)sender).Text + e.Text, 0, 9999);
+    }
+
+    private void Wood_OnPreviewTextInput(object sender, TextCompositionEventArgs e)
+    {
+        e.Handled = !IsValid(((TextBox)sender).Text + e.Text, 0, 9999);
+    }
+
+    private void Stone_OnPreviewTextInput(object sender, TextCompositionEventArgs e)
+    {
+        e.Handled = !IsValid(((TextBox)sender).Text + e.Text, 0, 9999);
+    }
+
+    private void FishingLevel1_OnPreviewTextInput(object sender, TextCompositionEventArgs e)
+    {
+        e.Handled = !IsValid(((TextBox)sender).Text + e.Text, 0, 50);
+    }
+
+    private void FishingLevel2_OnPreviewTextInput(object sender, TextCompositionEventArgs e)
+    {
+        e.Handled = !IsValid(((TextBox)sender).Text + e.Text, 0, 150);
+    }
+
+    private void FishingLevel3_OnPreviewTextInput(object sender, TextCompositionEventArgs e)
+    {
+        e.Handled = !IsValid(((TextBox)sender).Text + e.Text, 0, 300);
+    }
+
+    private void CarpenterLevel_OnPreviewTextInput(object sender, TextCompositionEventArgs e)
+    {
+        e.Handled = !IsValid(((TextBox)sender).Text + e.Text, 0, 2);
+    }
+
+    private void BlacksmithLevel_OnPreviewTextInput(object sender, TextCompositionEventArgs e)
+    {
+        e.Handled = !IsValid(((TextBox)sender).Text + e.Text, 0, 2);
+    }
+
+    private void BadgeLevel_OnPreviewTextInput(object sender, TextCompositionEventArgs e)
+    {
+        e.Handled = !IsValid(((TextBox)sender).Text + e.Text, 0, 2);
     }
 }

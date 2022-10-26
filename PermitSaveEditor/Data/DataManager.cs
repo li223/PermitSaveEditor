@@ -20,5 +20,5 @@ public class DataManager
         return new string(charArray);
     }
 
-    public static bool AllEnabled(List<bool> dataList) => dataList.All(x => x);
+    public static bool AllEnabled(IEnumerable<bool> dataList) => dataList.All(x => x);
 }
