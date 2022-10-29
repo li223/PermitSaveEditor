@@ -3,6 +3,8 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Input;
 using Microsoft.Win32;
 using Newtonsoft.Json;
 using PermitSaveEditor.Data;
@@ -156,6 +158,25 @@ public partial class MainWindow : Window
         _loadedSave!.NpcHealthDataList.HealAll();
         HandleInputVisibility();
     }
+
+    #endregion
+
+    #region Input Validation
+
+    private void Resource_OnPreviewTextInput(object sender, TextCompositionEventArgs e) 
+        => e.Handled = !IsValid(((TextBox)sender).Text + e.Text, 0, 9999);
+
+    private void Level_OnPreviewTextInput(object sender, TextCompositionEventArgs e)
+        => e.Handled = !IsValid(((TextBox)sender).Text + e.Text, 0, 2);
+
+    private void FishingLevel1_OnPreviewTextInput(object sender, TextCompositionEventArgs e)
+        => e.Handled = !IsValid(((TextBox)sender).Text + e.Text, 0, 50);
+
+    private void FishingLevel2_OnPreviewTextInput(object sender, TextCompositionEventArgs e)
+        => e.Handled = !IsValid(((TextBox)sender).Text + e.Text, 0, 150);
+
+    private void FishingLevel3_OnPreviewTextInput(object sender, TextCompositionEventArgs e)
+        => e.Handled = !IsValid(((TextBox)sender).Text + e.Text, 0, 300);
 
     #endregion
 }
