@@ -2,7 +2,7 @@
 
 namespace PermitSaveEditor.Objects;
 
-public class RoomEditorDatum
+public class RoomEditorData
 {
     [JsonProperty("roomObjectStr")] 
     public string RoomObjectStr { get; set; }

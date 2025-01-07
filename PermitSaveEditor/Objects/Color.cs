@@ -24,6 +24,9 @@ public class Color
         A = double.Parse(a);
     }
 
+    [JsonProperty("a")]
+    public double A { get; set; }
+
     [JsonProperty("r")] 
     public double R { get; set; }
 
@@ -32,9 +35,6 @@ public class Color
 
     [JsonProperty("b")] 
     public double B { get; set; }
-
-    [JsonProperty("a")] 
-    public double A { get; set; }
 
     public (byte A, byte R, byte G, byte B) ToArgb()
     {

@@ -136,10 +136,10 @@ public class GameSaveData
     public List<object> NewDiseaseDataList { get; set; }
 
     [JsonProperty("newQuestDataList")] 
-    public NewQuestDataList[] NewQuestDataList { get; set; }
+    public string[] NewQuestDataList { get; set; }
 
     [JsonProperty("eventStateData")] 
-    public List<EventStateDatum> EventStateData { get; set; }
+    public List<EventStateData> EventStateData { get; set; }
 
     [JsonProperty("activeQuestList")] 
     public List<ActiveQuestList> ActiveQuestList { get; set; }
@@ -163,7 +163,7 @@ public class GameSaveData
     public List<NpcHealthDataList> NpcHealthDataList { get; set; }
 
     [JsonProperty("roomEditorData")] 
-    public List<RoomEditorDatum> RoomEditorData { get; set; }
+    public List<RoomEditorData> RoomEditorData { get; set; }
 
     [JsonProperty("diseaseDay")] 
     public int DiseaseDay { get; set; }

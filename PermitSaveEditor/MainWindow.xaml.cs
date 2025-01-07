@@ -61,6 +61,8 @@ public partial class MainWindow : Window
             }
             catch (Exception ex)
             {
+                File.AppendAllText("log.txt", $"Error on file load: {ex.Message}");
+
                 LoadedFileText.Text = "File Name";
                 MessageBox.Show("Failed to load save file, data may be corrupted.", "Error", MessageBoxButton.OK);
             }

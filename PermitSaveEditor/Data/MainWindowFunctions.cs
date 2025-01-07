@@ -1,10 +1,8 @@
-﻿using System.Linq;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Input;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 using PermitSaveEditor.Data;
 using PermitSaveEditor.Objects;
+using System.Linq;
+using System.Windows;
 using Color = System.Windows.Media.Color;
 
 namespace PermitSaveEditor;
@@ -97,5 +95,5 @@ public partial class MainWindow
         HealAll.IsEnabled = !DataManager.AllEnabled(_loadedSave!.NpcHealthDataList.Select(x => !x.IsSick));
     }
 
-    public bool IsValid(string str, int min, int max) => int.TryParse(str, out int i) && i >= min && i <= max;
+    private bool IsValid(string str, int min, int max) => int.TryParse(str, out int i) && i >= min && i <= max;
 }
